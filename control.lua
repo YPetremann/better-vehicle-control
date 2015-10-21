@@ -30,7 +30,7 @@ vehicle_blacklist = Set{
   "cargo-wagon"
 }
 
-function on_tick(event)
+script.on_event(defines.events.on_tick, function(event)
   for k,v in pairs(game.players) do
     local vehicle = v.vehicle
     if vehicle ~= nil and vehicle.valid and not vehicle_blacklist[vehicle.type] then
@@ -61,13 +61,5 @@ function on_tick(event)
       end
     end
   end
-end
+end)
 
-game.on_init(on_init)
-game.on_load(on_load)
-game.on_event(defines.events,on_event)
-for k,v in pairs(defines.events) do 
-  if type(_G[k]) == "function" then
-    game.on_event(v,_G[k])
-  end
-end
