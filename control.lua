@@ -63,11 +63,11 @@ function on_tick(event)
   end
 end
 
-game.on_init(on_init)
-game.on_load(on_load)
-game.on_event(defines.events,on_event)
+script.on_init(on_init)
+script.on_load(on_load)
+script.on_event(defines.events,on_event)
 for k,v in pairs(defines.events) do 
   if type(_G[k]) == "function" then
-    game.on_event(v,_G[k])
+    script.on_event(v,_G[k])
   end
 end
