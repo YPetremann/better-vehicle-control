@@ -4,5 +4,7 @@
   "title": "Better Vehicle control",
   "author": "Y.Petremann",
   "contact": "http://www.factorioforums.com/forum/viewtopic.php?f=14&t=8976",
-  "homepage": "http://www.factorioforums.com/forum/viewtopic.php?f=14&t=8976"
+  "homepage": "http://www.factorioforums.com/forum/viewtopic.php?f=14&t=8976",
+  "dependencies": ["base >= 0.12.11"],
+  "description": "Makes it easier to control vehicles"
 }
