@@ -1,2 +1,2 @@
 # better-vehicle-control
- Factorio mod that tweak vehicle control to be easier.
+ Factorio mod that tweaks vehicle control to be easier.
