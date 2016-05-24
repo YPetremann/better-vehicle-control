@@ -40,23 +40,6 @@ function on_tick(event)
           v.vehicle.orientation = math.min(angle, orientation + angle_step)
         elseif orientation > angle and orientation < angle + angle_delta then
           v.vehicle.orientation = math.max(angle, orientation - angle_step)
-        elseif orientation == angle then
-          if linear.x ~= 0 then
-            local xv = (vehicle.position.x + linear_offset) % linear.x
-            if xv > 0 and xv < linear_delta then
-              vehicle.teleport{x = vehicle.position.x - math.min(xv, linear_step), y = vehicle.position.y}
-            elseif xv < linear.x and xv > linear.x - linear_delta then
-              vehicle.teleport{x = vehicle.position.x + math.min(linear.x - xv, linear_step), y = vehicle.position.y}
-            end
-          end
-          if linear.y ~= 0 then
-            local yv = (vehicle.position.y + linear_offset) % linear.y
-            if yv > 0 and yv < linear_delta then
-              vehicle.teleport{x = vehicle.position.x, y = vehicle.position.y - math.min(yv, linear_step)}
-            elseif yv < linear.y and yv > linear.y - linear_delta then
-              vehicle.teleport{x = vehicle.position.x, y = vehicle.position.y + math.min(linear.y - yv, linear_step)}
-            end
-          end
         end
       end
     end
